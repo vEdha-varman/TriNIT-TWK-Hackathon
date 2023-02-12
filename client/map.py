@@ -6,7 +6,7 @@ import pandas as pd
 import time
 
 
-t = 0
+# t = 0
 
 master = Tk()
 
@@ -20,6 +20,8 @@ w.create_rectangle(150, 10, 240, 80,
                    outline="#f50")
 w.create_rectangle(270, 10, 360, 80,
                    outline="#05f")
+w.create_rectangle(390, 10, 480, 80,
+                   outline="#05f")
 w.pack()
 
 
@@ -30,6 +32,21 @@ x = [10*i for i in df.index]
 y_1 = df[0]
 y_2 = df[1]
 y_3 = df[2]
+
+lights = None
+with open('write.json','r') as f:
+    f.read()
+
+# flag = 0
+# for i in range(3):
+#     if df[i][-3:] == [0,0,0]:
+#         flag = 1
+#     else:
+#         flag = 0
+# if flag == 1:
+#     w.create_rectangle(390, 10, 480, 80,
+#                    outline="#05f", fill="#05f")
+        
 
 # with open('slider.log', 'r') as f:
 #     time.sleep(10)

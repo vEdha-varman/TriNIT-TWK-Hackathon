@@ -1,4 +1,6 @@
 from flask import Flask, request
+import requests
+import pandas as pd
 
 # create the Flask app
 app = Flask(__name__)
@@ -84,20 +86,34 @@ def json():
     if request_data == None:
         # print("req::",request_data)
         return "Hello World, TriNIT Hackathon'23"
-    acc = None
-    brake = None
+    avg_v_effective = None
+    avg_eff_acc = None
+    avg_pwr_rtio = None
 
     if request_data:
-        if 'acc' in request_data:
-            acc = request_data['acc']
+        if 'avg_v_effective' in request_data:
+            avg_v_effective = request_data['avg_v_effective']
 
-        if 'brake' in request_data:
-            brake = request_data['brake']
+        if 'avg_eff_acc' in request_data:
+            avg_eff_acc = request_data['avg_eff_acc']
 
-    resp = '''
-           The acc value is: {}
-           The framework value is: {}'''.format(acc, brake)
-    
+        if 'avg_pwr_rtio' in request_data:
+            avg_pwr_rtio = request_data['avg_pwr_rtio']
+
+    lights = [0, 0, 0]
+    # condns
+    if avg_v_effective > 25:
+        lights[0] = 1
+    if avg_eff_acc > 1.4705:
+        lights[1] = 1
+    if avg_pwr_rtio > 30:
+        lights[2] = 1
+
+    # resp = '''
+    #        The acc value is: {}
+    #        The framework value is: {}'''.format(acc, brake)
+    resp = {"l1":lights[0],"l2":lights[1],"l3":lights[2]}
+    # resp.to_
     # print(resp)
 
     return resp
