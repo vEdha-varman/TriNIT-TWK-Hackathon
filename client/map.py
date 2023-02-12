@@ -4,6 +4,7 @@ from tkinter import *
 import numpy as np
 import pandas as pd
 import time
+import json
 
 
 # t = 0
@@ -34,8 +35,9 @@ y_2 = df[1]
 y_3 = df[2]
 
 lights = None
-with open('write.json','r') as f:
-    f.read()
+with open('write.json') as f:
+    
+    lights = json.load(f)
 
 # flag = 0
 # for i in range(3):
