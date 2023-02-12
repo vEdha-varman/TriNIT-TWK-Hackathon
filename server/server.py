@@ -92,13 +92,13 @@ def json():
 
     if request_data:
         if 'avg_v_effective' in request_data:
-            avg_v_effective = request_data['avg_v_effective']
+            avg_v_effective = float(request_data['avg_v_effective'])
 
         if 'avg_eff_acc' in request_data:
-            avg_eff_acc = request_data['avg_eff_acc']
+            avg_eff_acc = float(request_data['avg_eff_acc'])
 
         if 'avg_pwr_rtio' in request_data:
-            avg_pwr_rtio = request_data['avg_pwr_rtio']
+            avg_pwr_rtio = float(request_data['avg_pwr_rtio'])
 
     lights = [0, 0, 0]
     # condns

@@ -1,5 +1,6 @@
 import time
 import requests
+import json
 
 # count = 0
 while True:
@@ -11,4 +12,4 @@ while True:
         # print(last_line)
         r = requests.post(url="http://localhost:5000/json", json=DATA)
         with open('write.json', 'w') as f:
-            print(r.text, file=f)
+            json.dump(r.json(), f)

@@ -38,6 +38,28 @@ lights = None
 with open('write.json') as f:
     
     lights = json.load(f)
+    
+if lights[0]==1:
+    w.create_rectangle(30, 10, 120, 80,
+                   outline="#fb0",fill="#fb0")
+else:
+    w.create_rectangle(30, 10, 120, 80,
+                   outline="#fb0")
+if lights[1]:
+    w.create_rectangle(150, 10, 240, 80,
+                   outline="#f50", fill="#f50")
+else:
+    w.create_rectangle(150, 10, 240, 80,
+                   outline="#f50", fill="#f50")
+if lights[2]:
+    w.create_rectangle(270, 10, 360, 80,
+                   outline="#05f", fill="#05f")
+else:
+    w.create_rectangle(270, 10, 360, 80,
+                   outline="#05f")
+    
+    
+    
 
 # flag = 0
 # for i in range(3):
