@@ -3,3 +3,4 @@ baka.py
 MicroPython MQTT Weather Logger (ESP32) Copy/
 MicroPython MQTT Weather Logger (ESP32) Copy.zip
 client/slider.log
+client/write.json

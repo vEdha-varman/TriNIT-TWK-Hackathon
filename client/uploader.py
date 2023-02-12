@@ -10,4 +10,5 @@ while True:
         DATA = {"avg_v_effective": last_line[0], "avg_eff_acc": last_line[1], "avg_pwr_rtio": last_line[2]}
         # print(last_line)
         r = requests.post(url="http://localhost:5000/json", json=DATA)
-        print(r.text, file=open('write.json'))
+        with open('write.json', 'w') as f:
+            print(r.text, file=f)
